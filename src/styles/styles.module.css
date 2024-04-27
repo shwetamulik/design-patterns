@@ -1,0 +1,11 @@
+.user{
+    list-style: none;
+}
+.card{
+    border: solid 0.5px black;
+}
+.list{
+    display: flex;;
+    justify-content: center;
+    flex: 1;
+}
