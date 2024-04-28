@@ -2,14 +2,13 @@ import axios from "axios";
 import React, { ReactElement, useEffect, useState } from "react";
 
 export const Container = ({ children }: any) => {
-  const [userData, setUserData] = useState<null | any[]>(null);
-
+  const [userData, setUserData] = useState<any[]>([]);
+  const fetchUserData = () => {
+    axios
+      .get("http://localhost:8080/users")
+      .then((res) => setUserData(res.data));
+  };
   useEffect(() => {
-    const fetchUserData = () => {
-      axios
-        .get("http://localhost:8080/users")
-        .then((res) => setUserData(res.data));
-    };
     fetchUserData();
   }, []);
   return (
